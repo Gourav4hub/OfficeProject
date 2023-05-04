@@ -5,6 +5,9 @@ const {User} = require('../models/index')
 const ApiResponse = require('./ApiResponse')
 
 const webRouter = require("./WebRouter")
+const adminRouter = require("./AdminRouter")
+const hrRouter = require("./HrRouter")
+const empRouter = require("./EmployeeRouter")
 
 const router = express.Router()
 
@@ -43,6 +46,9 @@ router.use("*",(request,response,next)=>
 })
 
 router.use("/web",webRouter)
+router.use("/admin",adminRouter)
+router.use("/hr",hrRouter)
+router.use("/emp",empRouter)
 
 
 module.exports = router

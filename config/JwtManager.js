@@ -8,7 +8,7 @@ class JWT
     generateAccessToken(userid,empid,type) 
     {
         return jwt.sign({userid,empid,type}, process.env.TOKEN_SECRET, 
-            { expiresIn: '1m' });
+            { expiresIn: '5m' });
     }
 
     authenticateToken(req,callback) 

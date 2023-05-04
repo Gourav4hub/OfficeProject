@@ -1,10 +1,12 @@
 const express = require('express')
 const dotenv = require('dotenv');
+const cors = require('cors')
 
 const authRouter = require('./routers/AuthRouter')
 
 dotenv.config();
 const server = express()
+server.use(cors())
 server.use(express.json())
 
 server.get("/",(request,response)=>{
